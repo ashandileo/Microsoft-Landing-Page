@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <title>Microsoft Official Homepaga</title>
 </head>
-<body>    
+<body>
+    <div id="backdrop" class="backdrop"></div>
+    
     <div class="menu-btn">
         <i class="fas fa-bars fa-2x"></i>
     </div>
@@ -198,6 +200,12 @@
     <script>
        document.querySelector('.menu-btn').addEventListener('click', () => {
            document.querySelector('.main-menu').classList.toggle('show');
+           document.querySelector('.backdrop').classList.toggle('show')
+       })
+
+       document.querySelector('.backdrop').addEventListener('click', () => {
+        document.querySelector('.backdrop').classList.remove('show')
+        document.querySelector('.main-menu').classList.remove('show');
        })
     </script>
 

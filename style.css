@@ -10,7 +10,23 @@ body {
     color: #000;
     font-size: 15px;
     line-height: 1.5;
-    overflow: hidden;
+}
+
+.backdrop {
+    position: fixed;
+    background-color: #000;
+    opacity: 0;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity .5s ease-in-out;
+}
+
+.backdrop.show {
+    pointer-events: auto;
+    opacity: 0.5;
 }
 
 a {
@@ -289,7 +305,7 @@ ul {
 
     .main-nav ul.main-menu {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         background: #f2f2f2;
@@ -300,6 +316,7 @@ ul {
         opacity: 0.9;
         padding: 30px;
         transition: transform .5s ease-in-out;
+        z-index: 3;
     }
 
     .main-nav ul.main-menu li {
